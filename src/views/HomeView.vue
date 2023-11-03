@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="row">
+      <div class="col-1"></div>
+    <div class="col-7">
+      <instagram-card v-for="card in cards" :key="card" :info="card"/>
+      
+    </div>
+    <div class="col-3">
+     
+        </div>
+      
+    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import InstagramCard from '@/components/InstagramCard.vue'
+
+
+let cards=[
+  'https://picsum.photos/id/1/400/400',
+  'https://picsum.photos/id/2/400/400',
+  'https://picsum.photos/id/3/400/400',
+];
 
 export default {
-  name: 'HomeView',
+  name: 'home',
+  data:function(){
+    return{
+      
+      cards: cards,
+    };
+      
+  },
   components: {
-    HelloWorld
+    InstagramCard
   }
 }
 </script>
+
+    InstagramCard
